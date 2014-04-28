@@ -1,0 +1,45 @@
+\begin{thebibliography}{10}
+
+\bibitem{DETER}
+Creating experiments on deter.
+\newblock \url{https://trac.deterlab.net/wiki/Tutorial/CreatingExperiments}.
+
+\bibitem{Ethtool}
+Ethtool - standard linux utility for controlling network drivers and hardware.
+\newblock \url{https://www.kernel.org/pub/software/network/ethtool/}.
+
+\bibitem{Gnuplot}
+Gnuplot - command-line driven graphing utility.
+\newblock \url{http://www.gnuplot.info/}.
+
+\bibitem{Intro}
+Introduction to multicast.
+\newblock
+  \url{http://www.mathcs.emory.edu/~cheung/Courses/558/Syllabus/14-Multicast/intro.html}.
+
+\bibitem{Magi}
+Magi - montage agent infrastructure.
+
+\bibitem{Netstat}
+Netstat - command line tcp/ip networking utility.
+
+\bibitem{PGM}
+Pragmatic general multicast.
+\newblock \url{http://en.wikipedia.org/wiki/Pragmatic_General_Multicast}.
+
+\bibitem{SRM}
+Scalable reliable multicast.
+\newblock \url{http://en.wikipedia.org/wiki/Scalable_Reliable_Multicast}.
+
+\bibitem{Peterson}
+D.~M. Peter A. H.~Peterson.
+\newblock Student introduction to deter.
+\newblock \url{https://education.deterlab.net/DETERintro/DETERintro.html}.
+
+\bibitem{Code}
+A.~M.~R. W.~Richard~Stevens, Bill~Fenner.
+\newblock Chapter on multicast.
+\newblock In {\em UNIX Network Programming, Volume 1, Third Edition Source
+  Code}, pages Pg 487 -- 572. Addison-Wesley Professional; 3 edition, 2004.
+
+\end{thebibliography}

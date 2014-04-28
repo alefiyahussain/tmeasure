@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+
+\bibitem{SRM}
+S.~Floyd et~al.
+\newblock A reliable multicast framework for light-weight session and
+  applicatoin level framing, 2000.
+
+\bibitem{wang06}
+F.~Wang et~al.
+\newblock A measurement study on the impact of routing events on end-to-end
+  internet path performance.
+\newblock SIGCOMM '06, 2006.
+
+\end{thebibliography}
