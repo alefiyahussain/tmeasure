@@ -1,0 +1,37 @@
+
+\documentclass[letterpaper,twocolumn,10pt]{article}
+\usepackage{usenix,epsfig,endnotes}
+\begin{document}
+
+%don't want date printed
+\date{}
+
+%make title bold and 14 pt font (Latex default is non-bold, 16 pt)
+\title{\Large \bf A Network-level Empirical Characterization of Testbed Environments}
+
+\author{
+Anonymous 
+} % end author
+
+\maketitle
+
+% Use the following at camera-ready time to suppress page numbers.
+% Comment it out when you first submit the paper for review.
+\thispagestyle{empty}
+
+\input{abstract} 
+
+\input{intro} 
+\input{motivation}
+\input{methods} 
+\input{results} 
+
+
+\input{conclusion}
+
+
+
+{\footnotesize \bibliographystyle{acm}
+\bibliography{bibliography}}
+
+\end{document}

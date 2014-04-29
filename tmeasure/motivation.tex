@@ -1,0 +1,146 @@
+\section{Motivation}
+\label{sec:motive}
+
+There are more than 50 emulab-based testbeds across the world~\cite{EmulabWorld}. 
+For example,  DETERLab is one example of an emulab-based testbed located 
+ at USC Information Sciences Institute with 566 general computers and 
+ specialized hardware computers. 
+In this paper, we will use the term Emulab to refer to all 
+ such testbeds.  
+ 
+% what are we trying to do  
+Emulab-based testbeds are widely used for networking and 
+distributed system research. 
+These different emulab-based testbeds 
+%use variations 
+% of the software system to 
+ use a common ns-2-based experiment description for 
+  creating different topological structures 
+ and configuring the experiment nodes. 
+This has 
+ enabled networking researchers to rapidly port experiment descriptions 
+  from one testbed to another. 
+However, we observed very different results when 
+ using the \emph{same} experiment description 
+ on different testbeds. 
+ 
+We believe these difference in results are due to variations in both the 
+ facility hardware and the software system implementations across different 
+ Emulab-based testbeds. 
+These variations impact the measurements taken on the testbed. 
+Researchers can rarely account for them, they are typically not adjusted for. 
+However, they impact the repeatability and the correctness of the results. 
+ 
+\subsection{Background} 
+\label{sec:background}
+
+Emulab provides a common interface to 
+ configure the resources required for a networked experiment. 
+A networked experiment consists of a network topology with 
+ one or more end hosts. 
+The network topology defines the structure that connects the end hosts with each other. 
+A network topology consists of nodes and 
+links~\footnote{Emulab also offers creating LANs 
+ using similar mechanisms that we do not discuss in the paper.} 
+
+A \emph{node} can be an end host or a router en-route to two end hosts. 
+A node's hardware and software can be configured as part of the 
+experiment description. 
+The node's hardware can be chosen from a 
+ predefined set of available hardware types. 
+ The node's software, that is the operating systems, libraries and tools, 
+  can installed by the researcher. 
+A \emph{link} is a connection between two nodes. 
+A link's bandwidth,delay and queuing characteristics can be configured 
+ as part of the experiment description. 
+The link is realized 
+ using VLANs and link emulation mechanisms. 
+The VLAN creates a virtual point to point link, possibly across multiple switches, 
+ on the testbed.
+The bandwidth, delay, and queuing characteristics of a link 
+ are realized using a delay node that provides the 
+ link emulation capabilities. 
+Many emulab-based testbeds 
+ implement the delay node differently.
+For example, the DETERLab uses  
+  Click-based delay nodes and does 
+ not permit changing queue sizes. 
+%They can be usually addresses easily. 
+%The experiment description parser parser with correct documentation 
+% and parsers within the code to 
+ 
+Each node in emulab is connected to two networks.
+An \emph{experiment network} configured based on the network topology 
+specified in the experiment description and a \emph{control network} that 
+enables access to the nodes to control and configure them. 
+In this paper we will focus primarily on the network-level characteristics
+ of the experiment and control network and how 
+  they impact the experiment results. 
+
+\subsection{Intra-testbed Links} 
+Multicast is a IP-level mechanism to provide one to many communication. 
+It leverages network-level functionality within the routers to 
+  replicate a packet only when the topology of the network requires it. 
+%A sender can communicate with a large number of receivers 
+ %by sending  one packet and it is replicated by the network so that 
+  %all the receivers get a copy of the packet. 
+While not used commonly on the Internet, 
+ multicast is widely used in emulab-based testbeds for experiment configuration 
+ and control.
+ Emulab-based testbeds also provide a controlled environment to develop 
+ and evaluate multicast applications such as content delivery networks and streaming 
+video.  
+
+We observed network-level characteristics of the multicast implementation 
+ is different on different testbeds. 
+Also, after a recent upgrade of network switches on one of the testbeds, 
+ a multicast-based application that was working previously, stopped working. 
+Multicast is widely used with UDP-based transport protocols. 
+UDP is not reliable and does not guarantee the delivery of a message. 
+Hence messages may be dropped, delivered multiple times, or delivered out of order, 
+ leading to different performance characteristics as 
+ we discuss in Section~\ref{sec:results}
+
+
+\subsection{Inter-testbed Links}
+Many networking experiments include links 
+ that span across the Internet. 
+In such cases, the link characteristics are governed by the dynamic 
+ connectivity and congestion conditions between the two nodes. 
+When evaluating a distributed system across 
+ such a link, it is important to 
+correctly characterize and account of the dynamics in the 
+ network link properties. 
+ 
+For example, when exploring energy cyber physical models based on dependent, time synchronizedCPS models spanning the across testbeds.Such models are delay sensitive and require hard 
+ real time guarantees. Hence it is importantto quantify the delay properties of the underlining cybersubstrate so that the models can correctly designed forthis environment.
+
+
+
+We need to have a mechanism that  
+ ensure the network-level constraints are exposed 
+  to the design of the experiment. 
+The network-level assumption, about delay, bw, are invariant 
+ and hold throughout the duration of the 
+experiment. 
+Hence to expose these underlying network-level 
+  constraints and need to provide mechanisms that allow the 
+  experimenter to ensure the required invariants hold 
+  through put the experiment    
+
+% Hard
+Testbed environments are complex. 
+Virtualization is prevalent, federation is common 
+ mininet and simulation environments combined 
+  with emulation for scale. 
+ Ensuring the correctness of the environment 
+  that is, making the sure the requested 
+  network-level characteristics are satisfied is not easy. 
+  
+
+
+     
+ 
+ 
+
+
